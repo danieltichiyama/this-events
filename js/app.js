@@ -41,27 +41,24 @@ function showSecretMenu (){
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
 
-var divCount = document.createElement ('div');
-divCount.className = 'counter';
-divCount.innerHTML = '0';
+var thumbs = document.getElementsByClassName ('thumb');
 
-var thumbClass = document.getElementsByClassName ('thumb');
-
-for (i=0;i<thumbClass.length;i++){
+for (i=0;i<thumbs.length;i++){
 	var divCount = document.createElement ('div');
 divCount.className = 'counter';
 divCount.innerHTML = 0;
-	thumbClass[i].appendChild (divCount);
+divCount.style.display = 'inline';
+	thumbs[i].appendChild (divCount);
 }
 
-var iClass = document.getElementsByClassName ('far fa-thumbs-down');
+var icons = document.getElementsByClassName ('far fa-thumbs-down');
 
-for (i=0;i<iClass.length;i++){
-iClass[i].addEventListener('click',addOne);
+for (i=0;i<icons.length;i++){
+icons[i].addEventListener('click',addOne);
 }	
 
-function addOne (){	var num = parseInt(this.querySelector('counter').innerHTML);
-this.querySelector('counter').innerHTML = num +1;
+function addOne (){	
+	console.log ('test');
 }
 
 
